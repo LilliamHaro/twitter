@@ -12,13 +12,10 @@ function  tweeting(event) {
    }
    else {
 		 var newTweetBox = document.createElement('p'); //creando elemento contenedor
-     //variable creadas para que el texto no se sobresalga ---- preguntar si hay otra forma porque se desperdician lineas :C
-     var firstLine = texto.slice(0,65);
-     var seconLine = texto.slice(66,141);
-     newTweetBox.innerHTML = firstLine + '<br>' + seconLine; // dandole el texto que escribimos al elemento contenedor
+     // newTweetBox.innerHTML = firstLine + '<br>' + seconLine + '<br>' + thirdLine; // dandole el texto que escribimos al elemento contenedor
+     newTweetBox.innerHTML = texto;
 		 document.getElementById('newTweets').appendChild(newTweetBox); //agregando el contenedor con el texto al a la caja de nuevos tweets
      document.form.text.value = ""; //vaciando el contenedor de texto una vez se haya publicado
-
    }
 }
 var tweet = document.form.text; //definiendo el elemento que escuchara el evento key down

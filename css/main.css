@@ -79,4 +79,6 @@ textarea {
    background-color: #fff;
    padding: 25px;
    border: 1px solid #6ad2f3;
+   /*para que no se salga el texto del contenedor */
+   word-wrap: break-word;
  }
