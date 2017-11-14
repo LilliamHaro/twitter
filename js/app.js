@@ -27,18 +27,20 @@ tweet.addEventListener("keydown",function(){
  if(numsOfCharacters > 140){
 	 document.getElementById('buttonT').disabled = true;
 	 document.getElementById('buttonT').style.backgroundColor = 'gray';
-
+	  document.getElementById("countingNums").style.color = 'gray';
  }
- else if(numsOfCharacters > 130) {
+ else if(numsOfCharacters > 130 && numsOfCharacters < 140) {
 	 document.getElementById("countingNums").style.color = 'red';
+	 document.getElementById('buttonT').disabled = false;
+	 document.getElementById('buttonT').style.backgroundColor = '#6ad2f3';
  }
  else if(numsOfCharacters > 120) {
 	document.getElementById("countingNums").style.color = 'green';
+	document.getElementById('buttonT').disabled = false;
+	document.getElementById('buttonT').style.backgroundColor = '#6ad2f3';
  }
-
-
-
-
-
-
+ else if(numsOfCharacters < 120){
+	 document.getElementById("countingNums").style.color = '#6ad2f3';
+	 document.getElementById('buttonT').disabled = false;
+ }
 });
