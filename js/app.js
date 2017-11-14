@@ -11,7 +11,9 @@ function  tweeting(event) {
      document.getElementById('button').disable = true; //desabilitando el boton
    }
    else {
-     contenedor.innerHTML = texto; // dandole texto al contenedor
+		 var newTweetBox = document.createElement('p'); //creando elemento contenedor
+     newTweetBox.innerHTML = texto; // dandole el texto que escribimos al elemento contenedor
+		 document.getElementById('newTweets').appendChild(newTweetBox); //agregando el contenedor con el texto al a la caja de nuevos tweets
      // document.getElementById('button').style.backgroundColor= '#6ad2f3 ';
      document.form.text.value = ""; //vaciando el contenedor de texto una vez se haya publicado
 
@@ -22,4 +24,10 @@ var tweet = document.form.text; //definiendo el elemento que escuchara el evento
 //agregando la el evento y la funcion para el conteo de caracteres
 tweet.addEventListener("keydown",function(){
  document.getElementById("countingNums").innerHTML = tweet.value.length;
+
+
+
+
+
+
 });
