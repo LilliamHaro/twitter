@@ -9,17 +9,21 @@
   <body>
     <div id="container">
       <h1 class="twitter-title">Twitter</h1>
-      <form class="tweeting">
-          <textarea id="text-area" rows="4"></textarea>
-          <button type="submit" class="button" name="" value="TWEET">TWEET</button>
-          <div class="characters-nums">
-            <p>144</p>
-          </div>
+      <div class="action">
+      <form name="form" action="index.html" method="post">
+          <textarea id="text-area" name="text" rows="4"></textarea>
       </form>
-      <div id="newTweets">
-
+        <input name="button" class="button" type="submit" id="button" value="TWEET">
+        <div class="characters-nums">
+          <p id="countingNums">140</p>
+        </div>
       </div>
-
+      <div id="newTweets" class="published">
+      </div>
     </div>
+
+    <script src="js/app.js">
+
+    </script>
   </body>
 </html>
