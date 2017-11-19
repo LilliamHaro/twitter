@@ -9,6 +9,7 @@
   height: 100%;
   margin: auto;
   background-color: salmon;
+  padding-bottom: 25px;
   /*background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -25,12 +26,11 @@
 }
 .action {
   width: 700px;
-  height: 280px;
   margin:25px auto;
   border-radius: 5px;
   overflow: auto;
   background-color: #fff;
-  padding: 25px;
+  padding: 18px 25px 25px;
 }
 
 textarea {
@@ -40,14 +40,20 @@ textarea {
   font-family: monospace;
   font-size: 18px;
   line-height: 28px;
+  padding-top: 15px;
   padding-bottom: 15px;
-  margin-bottom: 25px
+  margin-bottom: 25px;
+  overflow: hidden;
+  /*en twitter real cada que pones un enter se crea un nuevo div */
+  /*investigar sobre min-height*/
+  /*para que se muestren los enter en los nuevos tweets con el evento keydown condicionado a la tecla enter puedes cambiarlos por br xd*/
+
 }
 .buttonTweet {
   width: 100px;
   height: 50px;
   margin: auto;
-  background-color: #6ad2f3;
+  background-color: gray;
   font-size: 20px;
   font-family: 'Patrick Hand', cursive;
   color: #fff;
@@ -63,14 +69,15 @@ textarea {
   color: #6ad2f3;
 }
  #newTweets {
-   height: 400px;
    width: 95%;
    margin:auto;
+   margin-top: 25px;
    background-color: #ffe4e1  ;
    padding-top: 5px;
    border-radius: 5px;
+   padding-bottom: 25px;
  }
- #newTweets p {
+ #newTweets div {
    width: 700px;
    margin:25px auto;
    font-family: monospace;
@@ -82,3 +89,27 @@ textarea {
    /*para que no se salga el texto del contenedor */
    word-wrap: break-word;
  }
+.sky-bg {
+  background-color: #6ad2f3;
+}
+.gray-nums {
+  color: gray;
+}
+.red-nums {
+  color: salmon;
+}
+.green-nums {
+  color: yellowgreen;
+}
+.skyblue-nums {
+  color: #6ad2f3;
+}
+p  {
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
+  color: gray;
+}
+.scroll-hide {
+  overflow: hidden;
+}
