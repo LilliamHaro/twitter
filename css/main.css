@@ -5,7 +5,7 @@
   outline: none;
 }
 body {
-background-color: #ffe4e1;
+background-color: #e6ecf0;
 }
 #container {
   width: 100%;
@@ -18,7 +18,7 @@ background-color: #ffe4e1;
 .twitter-title {
   text-align: center;
   font-family: 'Patrick Hand', cursive;
-  font-size: 55px;
+  font-size: 45px;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
@@ -70,10 +70,6 @@ textarea {
   padding-bottom: 15px;
   margin-bottom: 25px;
   overflow: hidden;
-  /*en twitter real cada que pones un enter se crea un nuevo div */
-  /*investigar sobre min-height*/
-  /*para que se muestren los enter en los nuevos tweets con el evento keydown condicionado a la tecla enter puedes cambiarlos por br xd*/
-
 }
 .buttonTweet {
   width: 100px;
@@ -98,6 +94,7 @@ textarea {
    width: 95%;
    margin:auto;
    margin-top: 25px;
+   background-color: #fff;
    padding-top: 5px;
    border-radius: 5px;
    padding-bottom: 25px;
