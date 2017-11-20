@@ -75,7 +75,7 @@ window.addEventListener('load', function() {
       if (!container.children) {
         container.appendChild(newTweetBox);
       } else {
-        // si hay tweets anteriores el nuevo tweet se agregará antes que estos
+        // si hay tweets anteriores el nuevo tweet se agregará antes que estos por ser el más actual
         container.insertBefore(newTweetBox, container.firstElementChild);
       }
       // reiniando el textarea

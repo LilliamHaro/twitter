@@ -4,11 +4,11 @@
   box-sizing: border-box;
   outline: none;
 }
+body {
+background-color: #ffe4e1;
+}
 #container {
-  width: 95%;
-  height: 100%;
-  margin: auto;
-  background-color: salmon;
+  width: 100%;
   padding-bottom: 25px;
   /*background-repeat: no-repeat;
   background-position: center;
@@ -23,6 +23,32 @@
   padding-bottom: 20px;
   color: #fff;
   background-color: #6ad2f3;
+}
+.perfil {
+  width: 550px;
+  height: 268px;
+  margin: 25px 15px 25px 25px;;
+  display: inline-block;
+  float: left;
+  background-color: white;
+  border-radius: 5px;
+  font-family: 'Patrick Hand', cursive;
+  padding: 25px;
+}
+.perfil h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #6ad2f3;
+}
+.perfil p {
+  font-size: 25px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.perfil hr {
+  height: 5px;
+  background-color: #6ad2f3;
+  border: none;
 }
 .action {
   width: 700px;
@@ -72,14 +98,13 @@ textarea {
    width: 95%;
    margin:auto;
    margin-top: 25px;
-   background-color: #ffe4e1  ;
    padding-top: 5px;
    border-radius: 5px;
    padding-bottom: 25px;
  }
  #newTweets div {
    width: 700px;
-   margin:25px auto;
+   margin:15px auto;
    font-family: monospace;
    font-size: 18px;
    border-radius: 5px;
@@ -88,6 +113,7 @@ textarea {
    border: 1px solid #6ad2f3;
    /*para que no se salga el texto del contenedor */
    word-wrap: break-word;
+
  }
 .sky-bg {
   background-color: #6ad2f3;
