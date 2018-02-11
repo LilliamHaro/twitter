@@ -1,17 +1,34 @@
+
 window.addEventListener('load', function() {
-  // definiendo el elemento que escuchara en el evento click
+  var myUbication = '';
+  function ubicacion() {
+    if (navigator.geolocation) {
+      function localizacion(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        console.log(lat + '' + lng);
+        var geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(lat, lng);
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            myUbication = results[0].formatted_address;
+          } else {
+            alert('ocurrio un error inesperado');
+          }
+        });
+      };
+      function error() {
+        alert('ocurrio un error inesperado');
+      }
+      navigator.geolocation.getCurrentPosition(localizacion, error);
+    }
+  };
+  ubicacion();
   var buttonTweet = document.getElementById('buttonT');
-  // definiendo el elemento que escuchara en el evento keydown
   var textArea = document.getElementById('text-area');
-  // -------------------------------------------------EVENTO KEYDOWN---------------------------------------
-  // podríamos haber usado el evento keyup pero el contador no se hubiera mostrado como deseamos
   textArea.addEventListener('keydown', function() {
-    // definiendo el numero de caracteres que se han tecleado en el text-area
     var numsOfCharacters = textArea.value.length;
-    // limite de caracteres posibles en nuestro tweet contando desde el primer caracter
     var limit = 139;
-    // dandole valor al contador
-    // contador = limit - numsOfCharacters -- le hará saber al usauro cuantos carateres le quedan
     document.getElementById('countingNums').innerHTML = limit - numsOfCharacters;
     // codicionando contador
     if (numsOfCharacters >= 0 && numsOfCharacters <= 120) {
@@ -32,23 +49,17 @@ window.addEventListener('load', function() {
       document.getElementById('countingNums').setAttribute('class', 'characters-nums gray-nums');
     }
     // Condicionando el evento key para cambiar el tamaño del textarea al dar enter
-    // 13 ---> código ascii de la tecla enter
     if (event.keyCode === 13) {
-      // para darle el tamaño del scroll a la altura del textarea
       textArea.style.height = (textArea.scrollHeight) + 'px';
     }
   });
-  // ----------------------------------------------------EVENTO CLICK-----------------------------------------------
-
-  // volveremos a usar las variables   buttonTweet y textArea definidas en la parte superior
   buttonTweet.addEventListener('click', function(event) {
-    // definimos el contenedor donde aparecerán los nuesvos tweets
     var container = document.getElementById('newTweets');
     // definiendo variables para obtener la hora -- usando el objeto date
     var fecha = new Date();
     var hora = fecha.getHours();
     var minuto = fecha.getMinutes();
-    // condicionales para evitar que las horas y los minutos no aparezcan como unidades ej: '9'--> '09'
+    // condicionales para evitar que las horas y los minutos no aparezcan como unidades
     if (minuto < 10) {
       minuto = '0' + minuto;
     }
@@ -57,25 +68,16 @@ window.addEventListener('load', function() {
     }
     var hours = 'Publicado a las ' + hora + ':' + minuto + ' horas';
 
-    // validamos que el textarea no este vacío ni este hecho de solo espacios
     if (textArea.value != 0) {
-      // creando nuevo tweet
-      // creando contenedor para la hora
       var newTweetsHour = document.createElement('p');
-      // dandole el texto escrito en el textarea al contenedor del tweet
-      newTweetsHour.innerHTML = hours;
-      // creando contenedor para el uevo tweet
+      newTweetsHour.innerHTML = hours + ' en ' + myUbication;
       var newTweetBox = document.createElement('div');
-      // dandole el valor del texto escrito en el textarea al contenedor del tweet
       newTweetBox.innerHTML = textArea.value;
-      // uniendo el contenedor con la hora al tweet
       newTweetBox.appendChild(newTweetsHour);
-      // Condicionando la posicion del nuevo tweet
-      // si no hay tweets anteriores se agregara normalmente
+
       if (!container.children) {
         container.appendChild(newTweetBox);
       } else {
-        // si hay tweets anteriores el nuevo tweet se agregará antes que estos por ser el más actual
         container.insertBefore(newTweetBox, container.firstElementChild);
       }
       // reiniando el textarea
