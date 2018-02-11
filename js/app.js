@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
         var latlng = new google.maps.LatLng(lat, lng);
         geocoder.geocode({'location': latlng}, function(results, status) {
           if (status === google.maps.GeocoderStatus.OK) {
-            myUbication = results[0].formatted_address;
+            myUbication = results[1].formatted_address;
           } else {
             alert('ocurrio un error inesperado');
           }
